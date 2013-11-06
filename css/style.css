@@ -27,15 +27,24 @@ div.list {
       div.list ul#todo li.completed {
         text-decoration: line-through;
         color: red; }
+      div.list ul#todo li input.itemTextbox {
+        display: none; }
+        div.list ul#todo li input.itemTextbox.edit {
+          display: inline-block;
+          text-align: center;
+          position: relative;
+          top: -4px; }
       div.list ul#todo li i.fa-eraser {
         float: right;
         color: black; }
-      div.list ul#todo li i.fa-square-o, div.list ul#todo li i.fa-check-square-o {
+      div.list ul#todo li i.fa-square-o, div.list ul#todo li i.fa-check-square-o, div.list ul#todo li i.fa-edit {
         color: black;
         float: left;
         padding-top: 2px; }
-        div.list ul#todo li i.fa-square-o.mouseover, div.list ul#todo li i.fa-check-square-o.mouseover {
+        div.list ul#todo li i.fa-square-o.mouseover, div.list ul#todo li i.fa-check-square-o.mouseover, div.list ul#todo li i.fa-edit.mouseover {
           cursor: pointer; }
+        div.list ul#todo li i.fa-square-o.edit, div.list ul#todo li i.fa-check-square-o.edit, div.list ul#todo li i.fa-edit.edit {
+          color: red; }
 
 .jumbotron.header {
   padding-top: 18px;

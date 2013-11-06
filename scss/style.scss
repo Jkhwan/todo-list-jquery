@@ -29,16 +29,28 @@ div.list {
 				text-decoration: line-through;
 				color: red;
 			}
+			input.itemTextbox {
+				display: none;
+				&.edit {
+					display: inline-block;
+					text-align: center;
+					position: relative;
+					top: -4px;
+				}
+			}
 			i.fa-eraser {
 				float: right;
 				color: black;
 			}
-			i.fa-square-o, i.fa-check-square-o {
+			i.fa-square-o, i.fa-check-square-o, i.fa-edit {
 				color: black;
 				float: left;
 				padding-top: 2px;
 				&.mouseover {
 					cursor: pointer;
+				}
+				&.edit {
+					color: red;
 				}
 			}
 		}
