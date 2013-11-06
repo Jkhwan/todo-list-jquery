@@ -10,10 +10,15 @@ div.list {
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100%;
   -o-background-size: 100%; }
+  div.list .alert-danger {
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 200px; }
   div.list ul#todo {
     padding-top: 200px;
     width: 500px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    list-style: none; }
     div.list ul#todo li {
       font-size: 25px;
       height: 50px;

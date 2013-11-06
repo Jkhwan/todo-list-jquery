@@ -1,38 +1,37 @@
 $(function() {
+	$('div.alert-danger').hide();
 
 	var addListItem = function() {
 		if ($('input.add').val() === "") {
-			$('div.warning').text("Text field is required.");
+			$('div.alert-danger').text("Text field is required.").show();
 		} else {
-			$('div.warning').text("");
+			$('div.alert-danger').text("").hide();
 			var newListItem = $("<li></li>").text($('input.add').val());
-			newListItem.addClass("list-group-item");
-			$('<i class="fa fa-fw fa-square-o"></i>').appendTo(newListItem);
-			$('<i class="fa fa-fw fa-eraser"></i>').appendTo(newListItem);
-			newListItem.appendTo($("ul#todo"));
+			newListItem.addClass("list-group-item").append($('<i class="fa fa-fw fa-square-o"></i>')).append($('<i class="fa fa-fw fa-eraser"></i>'));
+			$("ul#todo").append(newListItem.fadeIn());
 			$('input.add').val("");
 		}
 	};
 
-	$(document).on("submit", "form#addEntry", function(event) {
+	$('.jumbotron.header').on("submit", "form#addEntry", function(event) {
 		addListItem();
 		event.preventDefault();
 	});
 
-	$(document).on("click", "i.fa-eraser", function() {
+	$('ul#todo').on("click", "i.fa-eraser", function() {
 		$(this).parent().remove();
 	});
 
-	$(document).on("mouseover", "i.fa-square-o", function() {
+	$('ul#todo').on("mouseover", "i.fa-square-o", function() {
 		$(this).addClass("mouseover");
 	});
 
-	$(document).on("click", ".fa-square-o", function() {
+	$('ul#todo').on("click", ".fa-square-o", function() {
 		$(this).addClass("fa-check-square-o").removeClass("fa-square-o");
 		$(this).parent().addClass("completed");
 	});
 
-	$(document).on("click", ".fa-check-square-o", function() {
+	$('ul#todo').on("click", ".fa-check-square-o", function() {
 		$(this).addClass("fa-square-o").removeClass("fa-check-square-o");
 		$(this).parent().removeClass("completed");
 	});
